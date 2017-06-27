@@ -2,50 +2,135 @@ package org.springboothomework.app.models;
 
 public class User {
 	private int id;
-	private String name;
+	private String username;
+	private String email;
 	private String gender;
-	private String pob;
+	private String date;
+	private String user_hash;
+	private String phonenumber;
 	
+	
+
+
 	public User(){
-		this(0,"Unknown", "Unknown", "Unknown");
+		
 	}
-	
-	public User(int id, String name, String gender, String pob){
-		setId(id);
-		setName(name);
-		setGender(gender);
-		setPob(pob);
+
+
+
+
+	public User(int id, String username, String email, String gender, String date, String user_hash,
+			String phonenumber) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.email = email;
+		this.gender = gender;
+		this.date = date;
+		this.user_hash = user_hash;
+		this.phonenumber = phonenumber;
 	}
-	
-	public void setId(int id){
+
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+
+	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public void setName(String name){
-		this.name = name;
+
+
+
+
+	public String getUsername() {
+		return username;
 	}
-	
-	public void setGender(String gender){
-		this.gender = gender;
+
+
+
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	
-	public void setPob(String pob){
-		this.pob = pob;
+
+
+
+
+	public String getEmail() {
+		return email;
 	}
-	
-	public int getId(){
-		return id;
-	}	
-	
-	public String getName(){
-		return name;
+
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getGender(){
+
+
+
+
+	public String getGender() {
 		return gender;
 	}
-	
-	public String getPob(){
-		return pob;
+
+
+
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
+
+
+
+
+	public String getDate() {
+		return date;
+	}
+
+
+
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+
+
+
+	public String getUser_hash() {
+		return user_hash;
+	}
+
+
+
+
+	public void setUser_hash(String user_hash) {
+		this.user_hash = user_hash;
+	}
+
+
+
+
+	public String getPhonenumber() {
+		return phonenumber;
+	}
+
+
+
+
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
+	}
+
+	
+	
+	
 	
 }

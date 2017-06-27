@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="/admin/admin-layout">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+</head>
+<body class="dashboard">
+	<div layout:fragment="content" class="content-wrapper">
+		  
+		  <div class="page animsition">
+		    <div class="page-content padding-0">
+		      <ul class="blocks no-space blocks-100 blocks-xlg-3 blocks-md-2">
+		        <li class="widget" th:each="U:${user}"> 
+		        
+		          <div class="widget-header cover overlay overlay-hover">
+		            <img class="cover-image overlay-scale" src="/resources/assets/photos/placeholder.png"
+		            alt="...">
+		            <div class="overlay-panel overlay-fade overlay-background overlay-background-fixed text-center vertical-align">
+		              <div class="vertical-align-middle">
+		              	<a class="avatar avatar-lg" href="javascript:void(0)">
+                  			<img src="/resources/assets/portraits/5.jpg" alt="...">
+                		</a>
+		                <div class="widget-time widget-divider">
+		                  <span th:text="${U.phonenumber}">Phone Number</span>
+		                </div>
+		                <h3 class="widget-title margin-bottom-20" th:text="${U.username}">id</h3>
+		                <button type="button" class="btn btn-outline btn-inverse">READ MORE</button>
+		              </div>
+		            </div>
+		          </div>
+		        </li>
+		      </ul>
+		    </div>
+		  </div>
+		
+		
+		
+	<div >
+		
+	</div>
+		
+	</div>
+
+</body>
+</html>

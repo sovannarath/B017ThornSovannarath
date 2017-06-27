@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="/admin/admin-layout">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+</head>
+<body class="dashboard">
+	<div layout:fragment="content" class="content-wrapper">
+	<div class="page animsition">
+    <div class="page-header">
+      <h1 class="page-title" th:text="#{user_form}">Form Layouts</h1>
+      <ol class="breadcrumb">
+        <li><a th:href="@{/admin}" th:text="#{home}">Home</a></li>
+        <li><a href="javascript:void(0)" th:text="#{user_form}">User Form</a></li>
+        <li class="active" th:text="#{layout}">Layouts</li>
+      </ol>
+	<div class="page-content">
+      <div class="panel">
+	  	<div class="panel-body container">
+          <div class="row row-lg">
+
+            <div class="col-sm-12">
+              <!-- Example Basic Form Without Label -->
+              <div class="example-wrap">
+                <h4 class="example-title" th:text="#{user_form_layout}" >Basic Form Without Label</h4>
+                <div class="example">
+                  <form class="" th:action="${addStatus==true?'/userform/insert':'/update'}" th:object="${USER}" method="POST">
+                    <div class="form-group row">
+                      <div class="col-sm-12">
+                        <input th:field="*{username}" type="text" class="form-control" name="firstname" th:placeholder="#{first_name}"
+                        autocomplete="off" />
+                     
+                      </div>
+
+                    </div>
+                    <div class="form-group">
+                      <div class="radio-custom radio-default radio-inline">
+                        <input th:field="*{gender}" value="Male" type="radio" id="inputLabelMale" name="inputRadioGender" />
+                        <label for="inputLabelMale" th:text="#{male}">Male</label>
+                      </div>
+                      <div class="radio-custom radio-default radio-inline">
+                        <input th:field="*{gender}" value="Female" type="radio" id="inputLabelFemale" name="inputRadioGender" checked />
+                        <label for="inputLabelFemale" th:text="#{female}">Female</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input th:field="*{email}" type="email" class="form-control" name="email" th:placeholder="#{email_address}"
+                      autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                      <input th:field="*{phonenumber}" type="text" class="form-control" name="phonenumber" placeholder="Phone Number"
+                      autocomplete="off" />
+                    </div>
+                     <div class="form-group">
+                      <input th:field="*{user_hash}" type="text" class="form-control" name="phonenumber" placeholder="Phone Number" readonly=" readonly"
+                      autocomplete="off" />
+                    </div>
+                                        
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary" th:text="#{submit}" >Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <!-- End Example Basic Form Without Label -->
+            </div>
+        </div>
+        </div>
+      </div>
+      </div>
+     </div>
+      </div>
+    </div>
+	
+
+</body>
+</html>

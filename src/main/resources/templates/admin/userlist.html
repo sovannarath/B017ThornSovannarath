@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="/admin/admin-layout">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+</head>
+<body class="dashboard">
+	<div layout:fragment="content" class="content-wrapper">
+		<div class="page animsition">
+		    <div class="page-content">
+		      <!-- Panel -->
+		      		<div class="example-wrap">
+		                <h4 class="example-title" th:text="#{user_list}">Bordered Table</h4>
+		                
+		                <div class="example table-responsive">
+		                  <table class="table table-bordered">
+		                    <thead>
+		                      <tr>
+		                        <th>User ID</th>
+		                        <th>User Name</th>
+		                        <th>Gender</th>
+		                        <th>Phone Number</th>
+		                        <th>Email</th>
+		                        <th class="text-nowrap">Action</th>
+		                      </tr>
+		                    </thead>
+		                    <tbody>
+		                      <tr th:each="U:${user}">
+		                        <td th:text="${U.id}">User ID</td>
+		                        <td th:text="${U.username}">User Name</td>
+		                       	<th th:text="${U.gender}">Gender</th>
+		                        <th th:text="${U.phonenumber}">Phone Number</th>
+		                        <th th:text="${U.email}">Email</th>
+		                        
+		                        
+		                        <td class="text-nowrap">
+		                          <a th:href="@{/userlist/edit/{user_hash}(user_hash=${U.user_hash})}" type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
+		                          data-original-title="Edit">
+		                            <i class="icon wb-wrench" aria-hidden="true"></i>
+		                          </a>
+		                          <a th:href="@{/delete/{user_hash}(user_hash=${U.user_hash})}" type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"></a>
+		                           <a th:href="@{/detail/{user_hash}(user_hash=${U.user_hash})}" type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"></a>
+		                         
+		                            <i class="icon wb-close" aria-hidden="true"></i>
+		                          </a>
+		                        </td>
+		                      </tr>
+		                      
+		                    </tbody>
+		                  </table>
+		                </div>
+		              </div>
+		      <!-- End Panel -->
+		    </div>
+		  </div>
+	</div>
+
+</body>
+</html>
